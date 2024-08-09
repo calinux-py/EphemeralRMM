@@ -7,6 +7,7 @@ It is a fun project.
 
 - Python 3.8+
 - Discord Bot Token
+- Discord Webhooks
 - Google Remote Desktop
 - PowerShell
 - discord.py
