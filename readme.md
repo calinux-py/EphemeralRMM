@@ -1,6 +1,7 @@
 # EphemeralRMM
 
-Ephemeral is a free RMM using Discord and Chrome Remote Desktop API. It is a fun project.
+Ephemeral is a free RMM using Discord and Chrome Remote Desktop API. It allows you to receive updates and control your devices from anywhere in the world using Discord.
+It is a fun project.
 
 ## Requirements
 
@@ -32,8 +33,12 @@ Ephemeral is a free RMM using Discord and Chrome Remote Desktop API. It is a fun
     pip install -r requirements.txt
     ```
 
-3. **Configure Your Bot**:
+3. **Configure Ephemeral**:
     - Update `config/config.ini` with your Discord bot token and webhooks.
+    - [LiveFeed] is the Discord webhook where your devices will actively post device information in realtime.
+    - [AgentStatus] is the Discord webhook where agents will post device information when inquired.
+    - LiveFeed and AgentStatus can be the same Discord webhook.
+    - [DiscordToken] is where you enter your Discord Bot token. 
 
 4. **Run on your main device**:
     ```powershell
