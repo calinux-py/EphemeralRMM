@@ -47,7 +47,7 @@ It is a fun project.
     ```
 5. **Run on devices to manage**:
     ```powershell
-    python ephemeral-head.py
+    python ephemeral-agent.py
     ```
 
 ## Commands
