@@ -35,10 +35,10 @@ It is a fun project.
 
 3. **Configure Ephemeral**:
     - Update `config/config.ini` with your Discord bot token and webhooks.
-    - [LiveFeed] is the Discord webhook where your devices will actively post device information in realtime.
-    - [AgentStatus] is the Discord webhook where agents will post device information when inquired.
+    - `[LiveFeed]` is the Discord webhook where your devices will actively post device information in realtime.
+    - `[AgentStatus]` is the Discord webhook where agents will post device information when inquired.
     - LiveFeed and AgentStatus can be the same Discord webhook.
-    - [DiscordToken] is where you enter your Discord Bot token. 
+    - `[DiscordToken]` is where you enter your Discord Bot token. 
 
 4. **Run on your main device**:
     ```powershell
