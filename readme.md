@@ -54,7 +54,7 @@ It is a fun project.
 
 - `/device-list`: Lists all devices currently enrolled in the system.
 - `/enroll-device`: Enrolls a new device into the system.
-- `/check-status`: Checks the status of a specific device.
+- `/check-status`: Checks the status of devices.
 - `/howto-enroll`: Provides detailed instructions on how to enroll a new device.
 
 ## License
