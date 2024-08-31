@@ -5,11 +5,13 @@ It is a fun project.
 
 | Supported | Feature            |
 |--------|--------------------|
-| ✅     | **Device Enrollment**   |
-| ✅     | **Device Listing**      |
-| ✅     | **Status Check**        |
-| ✅     | **Discord Shell**       |
-| ✅     | **Guided Enrollment**   |
+| ✅     | **Control devices remotely**   |
+| ✅     | **Remote into any device from Discord**   |
+| ✅     | **List enrolled devices**      |
+| ✅     | **Status check on enrolled devices**        |
+| ✅     | **Real-time device feed**       |
+| ✅     | **Execute PowerShell commands from Discord**   |
+| ✅     | **Guided enrollment of new devices**   |
 
 
 ## Requirements
