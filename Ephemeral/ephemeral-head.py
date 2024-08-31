@@ -26,7 +26,7 @@ readable_uptime = f"{hours}h {minutes}m {seconds}s"
 timestamp_utc = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')
 
 config = configparser.ConfigParser()
-config.read(['config/config.ini', 'config/agents.ini'])
+config.read('config/config.ini')
 token = config.get('DiscordToken', 'Token')
 webhook_url = config.get('LiveFeed', 'LiveFeedWebhook')
 
@@ -71,6 +71,7 @@ async def on_ready():
 async def listofmemes(interaction: discord.Interaction):
     await interaction.response.defer(ephemeral=True)
 
+    config.read('config/agents.ini')
     agents = config.get('Ephemerial', 'agents').strip('[]').split('], [')
     response = ""
     for agent in agents:
