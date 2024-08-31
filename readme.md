@@ -76,6 +76,13 @@ It is a fun project.
 - `/run`: Execute PowerShell or cmd commands directly from Discord.
 - `/howto-enroll`: Provides detailed instructions on how to enroll a new device.
 
+## Start Ephemeral (Hidden) Upon Each Boot
+Save the below PowerShell script as a `.ps1` file in your `Startup Folder`. You can easily access your `Startup Folder` by holding `CTRL+R` and typing `shell:startup`.
+```powershell
+cd "PATH\TO\Ephemeral\Ephemeral\";
+Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
+```
+
 ## License
 
 i dont care
