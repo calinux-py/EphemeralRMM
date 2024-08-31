@@ -15,7 +15,8 @@ It is a fun project.
 
 
 ## Requirements
-![Windows](https://img.shields.io/badge/platform-Windows-blue)
+![Windows](https://img.shields.io/badge/platform-Windows-blue)![Python](https://img.shields.io/badge/language-Python-blue)![PowerShell](https://img.shields.io/badge/language-PowerShell-blue)
+
 
 
 - Python 3.8+
