@@ -11,7 +11,7 @@ It is a fun project.
 | ✅     | **List enrolled devices**      |
 | ✅     | **Status check on enrolled devices**        |
 | ✅     | **Real-time device feed**       |
-| ✅     | **Execute Terminal cmds from Discord**   |
+| ✅     | **Execute terminal cmds from Discord**   |
 
 
 
