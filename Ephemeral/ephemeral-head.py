@@ -37,8 +37,8 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 print(f'\n\n---------------------------------------------\nEphemeral Head is initiating...')
 print(f"{timestamp_utc}\n---------------------------------------------\n\n")
 @bot.event
-async def start_iguess():
-    await bot.tree.sync()
+async def on_ready():
+    await bot.tree.sync(guild=None)
 
     senddis = {
         "embeds": [
@@ -218,5 +218,15 @@ async def howtomeme(interaction: discord.Interaction):
     embed.set_image(url="attachment://new-agent8.png")
 
     await interaction.followup.send(embed=embed, file=discord.File("config/setup/new-agent8.png"))
+
+
+
+@bot.tree.command(name="run", description="Execute PowerShell command")
+async def execute(interaction: discord.Interaction, hostname: str, command: str):
+    async def run_in_thread():
+        await interaction.response.send_message("-# Command executed successfully.", ephemeral=True)
+
+    await run_in_thread()
+
 
 bot.run(token)
