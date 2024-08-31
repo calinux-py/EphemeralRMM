@@ -51,6 +51,8 @@ It is a fun project.
     - `[LiveFeed]` is the Discord webhook where your devices will actively post device information in realtime.
     - `[AgentStatus]` is the Discord webhook where agents will post device information when inquired.
     - LiveFeed and AgentStatus can be the same Discord webhook.
+    - `[AgentCommands]` is the Discord webhook used by agents to return output from PowerShell commands.
+    - LiveFeed and AgentStatus can be the same Discord webhook.
     - `[DiscordToken]` is where you enter your Discord Bot token. 
 
 4. **Run on your main device**:
