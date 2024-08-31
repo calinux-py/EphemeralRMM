@@ -39,7 +39,7 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 print(f'\n\n---------------------------------------------\nEphemeral Agent is initiating...')
 print(f"{timestamp_utc}\n---------------------------------------------\n\n")
 @bot.event
-async def start_iguess():
+async def on_ready():
     await bot.tree.sync()
 
 
@@ -91,6 +91,21 @@ async def memecheck(interaction: discord.Interaction):
 
     thread = threading.Thread(target=run_in_thread)
     thread.start()
+
+
+@bot.tree.command(name="run", description="Execute PowerShell command")
+async def execute(interaction: discord.Interaction, hostname: str, command: str):
+    def run_in_thread():
+        cmd = f'.\\agent2.ps1 -hostname "{hostname}" -command "{command}"'
+        result = subprocess.run(
+            ["powershell.exe", "-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", cmd],
+            capture_output=True, text=True
+        )
+        output = result.stdout if result.stdout else result.stderr
+
+    thread = threading.Thread(target=run_in_thread)
+    thread.start()
+
 
 
 # ignore
