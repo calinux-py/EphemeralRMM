@@ -67,7 +67,7 @@ It is a fun project.
 - `/device-list`: Lists all devices currently enrolled in the system.
 - `/enroll-device`: Enrolls a new device into the system.
 - `/check-status`: Checks the status of devices.
-- - `/run`: Execute PowerShell or cmd commands directly from Discord.
+- `/run`: Execute PowerShell or cmd commands directly from Discord.
 - `/howto-enroll`: Provides detailed instructions on how to enroll a new device.
 
 ## License
