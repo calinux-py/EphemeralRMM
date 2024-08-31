@@ -11,7 +11,7 @@ It is a fun project.
 | ✅     | **List enrolled devices**      |
 | ✅     | **Status check on enrolled devices**        |
 | ✅     | **Real-time device feed**       |
-| ✅     | **Execute PowerShell commands from Discord**   |
+| ✅     | **Execute Terminal (CMD) commands from Discord**   |
 
 
 
@@ -35,7 +35,7 @@ It is a fun project.
 - **Device Enrollment**: Easily enroll new devices to the network using the `/enroll-device` command.
 - **Device Listing**: View all enrolled devices and their details using the `/device-list` command.
 - **Status Check**: Remotely check the status of any enrolled device with the `/check-status` command.
-- **Discord Shell**: Execute PowerShell commands directly from Discord using the `/run` command. Return the output back to you in Discord.
+- **Discord Shell**: Execute Terminal (CMD) commands directly from Discord using the `/run` command. Return the output back to you in Discord.
 - **Guided Enrollment**: Step-by-step instructions for enrolling a new device via the `/howto-enroll` command.
 
 [<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/eph.png?raw=true" alt="Ephemeral Logo" width="41%">](https://github.com/calinux-py/Ephemeral)
