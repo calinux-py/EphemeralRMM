@@ -15,7 +15,7 @@ It is a fun project.
 
 
 ## Requirements
-![Windows](https://img.shields.io/badge/platform-Windows-blue)![Python](https://img.shields.io/badge/language-Python-darkgreen)![PowerShell](https://img.shields.io/badge/language-PowerShell-purple)![Discord](https://img.shields.io/badge/Discord-7289DA?logo=discord&logoColor=white)
+![Windows](https://img.shields.io/badge/platform-Windows-blue)![Python](https://img.shields.io/badge/language-Python-darkgreen)![PowerShell](https://img.shields.io/badge/language-PowerShell-purple)![Discord](https://img.shields.io/badge/Discord-7289DA?logo=discord&logoColor=white)![Google](https://img.shields.io/badge/Google-4285F4?logo=google&logoColor=white)
 
 
 
