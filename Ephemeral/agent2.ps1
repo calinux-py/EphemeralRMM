@@ -26,7 +26,6 @@ function Get-IniContent {
 $currentHostname = $env:COMPUTERNAME
 
 if ($hostname -ne $currentHostname) {
-    # If it doesn't match, exit the script
     exit
 }
 
@@ -36,7 +35,7 @@ $webhookUrl = $config['AgentCommands']['AgentCommandWebhook']
 function Invoke-CommandWithTimeout {
     param (
         [string]$Command,
-        [int]$Timeout = 25
+        [int]$Timeout = 30
     )
 
     $job = Start-Job -ScriptBlock { 
@@ -57,14 +56,40 @@ function Invoke-CommandWithTimeout {
     return $output
 }
 
-$output = Invoke-CommandWithTimeout -Command $command -Timeout 25
+$output = Invoke-CommandWithTimeout -Command $command -Timeout 30
+
 
 $outputString = $output -join "`n"
 
-$formattedOutput = "``````$outputString``````"
+$outputFile = "output.txt"
+$outputString | Out-File -FilePath $outputFile -Encoding UTF8
 
-$body = @{
-    content = $formattedOutput
-} | ConvertTo-Json
+$outputFromFile = Get-Content -Path $outputFile -Raw
 
-Invoke-RestMethod -Uri $webhookUrl -Method Post -Body $body -ContentType "application/json"
+$formattedOutput = "``````$outputFromFile``````"
+
+$chunkSize = 1990
+$chunks = @()
+$firstChunk = $true
+for ($i = 0; $i -lt $formattedOutput.Length; $i += $chunkSize) {
+    $chunk = $formattedOutput.Substring($i, [math]::Min($chunkSize, $formattedOutput.Length - $i))
+
+    if (-not $firstChunk) {
+        $chunk = "``````" + $chunk
+    }
+    $firstChunk = $false
+
+    if ($i + $chunkSize -lt $formattedOutput.Length) {
+        $chunk += "`n``````"
+    }
+    
+    $chunks += $chunk
+}
+
+foreach ($chunk in $chunks) {
+    $body = @{
+        content = $chunk
+    } | ConvertTo-Json
+
+    Invoke-RestMethod -Uri $webhookUrl -Method Post -Body $body -ContentType "application/json"
+}
