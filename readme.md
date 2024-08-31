@@ -24,6 +24,8 @@ It is a fun project.
 - discord.py
 - psutil
 - requests
+- ![Windows Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Windows_logo_-_2012_%28dark_blue%29.svg/1024px-Windows_logo_-_2012_%28dark_blue%29.svg.png)
+
 
 ## Features
 
