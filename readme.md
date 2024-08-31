@@ -38,6 +38,10 @@ It is a fun project.
 - **Discord Shell**: Execute PowerShell commands directly from Discord using the `/run` command. Return the output back to you in Discord.
 - **Guided Enrollment**: Step-by-step instructions for enrolling a new device via the `/howto-enroll` command.
 
+[<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/eph.png?raw=true" alt="Ephemeral Logo" width="5%">](https://github.com/calinux-py/Ephemeral)
+
+
+
 ## Setup
 
 1. **Clone the Repository**:
