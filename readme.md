@@ -3,6 +3,15 @@
 Ephemeral is a free RMM using Discord and Chrome Remote Desktop API. It allows you to receive updates and control your devices from anywhere in the world using Discord.
 It is a fun project.
 
+| Supported | Feature            |
+|--------|--------------------|
+| ✅     | **Device Enrollment**   |
+| ✅     | **Device Listing**      |
+| ✅     | **Status Check**        |
+| ✅     | **Discord Shell**       |
+| ✅     | **Guided Enrollment**   |
+
+
 ## Requirements
 
 - Python 3.8+
@@ -19,6 +28,7 @@ It is a fun project.
 - **Device Enrollment**: Easily enroll new devices to the network using the `/enroll-device` command.
 - **Device Listing**: View all enrolled devices and their details using the `/device-list` command.
 - **Status Check**: Remotely check the status of any enrolled device with the `/check-status` command.
+- **Discord Shell**: Execute PowerShell commands directly from Discord using the `/run` command. Return the output back to you in Discord.
 - **Guided Enrollment**: Step-by-step instructions for enrolling a new device via the `/howto-enroll` command.
 
 ## Setup
