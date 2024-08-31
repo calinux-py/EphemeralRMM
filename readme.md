@@ -7,11 +7,12 @@ It is a fun project.
 |--------|--------------------|
 | ✅     | **Control devices remotely from Discord**   |
 | ✅     | **Remote into any device from Discord**   |
+| ✅     | **Guided enrollment of new devices**   |
 | ✅     | **List enrolled devices**      |
 | ✅     | **Status check on enrolled devices**        |
 | ✅     | **Real-time device feed**       |
 | ✅     | **Execute PowerShell commands from Discord**   |
-| ✅     | **Guided enrollment of new devices**   |
+
 
 
 ## Requirements
