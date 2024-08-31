@@ -15,6 +15,8 @@ It is a fun project.
 
 
 ## Requirements
+![Windows](https://img.shields.io/badge/platform-Windows-blue)
+
 
 - Python 3.8+
 - Discord Bot Token
