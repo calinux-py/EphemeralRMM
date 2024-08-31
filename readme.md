@@ -1,5 +1,6 @@
 # EphemeralRMM
-<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/ephemerallogo.png?raw=true" alt="https://github.com/calinux-py/Ephemeral/blob/main/readme.md" width="10%">
+[<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/ephemerallogo.png?raw=true" alt="Ephemeral Logo" width="8%">](https://github.com/calinux-py/Ephemeral)
+
 
 Ephemeral is a free RMM using Discord and Chrome Remote Desktop API. It allows you to receive updates and control your devices from anywhere in the world using Discord.
 It is a fun project.
