@@ -222,7 +222,7 @@ async def howtomeme(interaction: discord.Interaction):
 
 
 @bot.tree.command(name="run", description="Execute PowerShell command")
-async def execute(interaction: discord.Interaction, hostname: str, command: str):
+async def execute(interaction: discord.Interaction, host: str, command: str):
     async def run_in_thread():
         await interaction.response.send_message("-# Command executed successfully.", ephemeral=True)
 
