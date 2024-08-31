@@ -5,7 +5,7 @@ It is a fun project.
 
 | Supported | Feature            |
 |--------|--------------------|
-| ✅     | **Control devices remotely**   |
+| ✅     | **Control devices remotely from Discord**   |
 | ✅     | **Remote into any device from Discord**   |
 | ✅     | **List enrolled devices**      |
 | ✅     | **Status check on enrolled devices**        |
