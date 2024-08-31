@@ -87,3 +87,5 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
 ## License
 
 MIT
+
+[<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/ephemerallogo.png?raw=true" alt="Ephemeral Logo" width="25%">](https://github.com/calinux-py/Ephemeral)
