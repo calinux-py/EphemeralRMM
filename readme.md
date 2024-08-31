@@ -85,4 +85,4 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
 
 ## License
 
-i dont care
+MIT
