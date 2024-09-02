@@ -100,7 +100,7 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
 [<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/ephproc.png?raw=true" alt="Ephemeral Logo" width="39%">](https://github.com/calinux-py/Ephemeral)
 
 ## PowerShell Agents
-- **Agent.ps1**: used for checking status of all client agents. Returns output back to user in Discord.
+- **Agent.ps1**: used for checking statuses of all client agents. Returns output back to user in Discord.
 - **Agent2.ps1**: used for running shell commands and returning output back to the user in Discord.
 - **Agent3.ps1**: used for monitoring new processes and updating the user in Discord. 
 
