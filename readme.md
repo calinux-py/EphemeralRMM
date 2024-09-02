@@ -73,14 +73,14 @@ pyinstaller --onefile PATH/TO/EPHEMERAL.py
     - Run Ephemeral-Head on a server or computer you are controlling.
     - Run Ephemeral-Client on a Windows client device you want to control.
 
-7. **Start Ephemeral (Hidden) Upon Each Boot**:
+6. **Start Ephemeral (Hidden) Upon Each Boot**:
     - Save the below PowerShell script as a `.ps1` file in your `Startup Folder`. You can easily access your `Startup Folder` by holding `CTRL+R` and typing `shell:startup`.
 ```powershell
 cd "PATH\TO\Ephemeral\";
 Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden; Start-Process -FilePath .\agent3.ps1 -WindowStyle hidden
 ```
 
-8. Optional: **Start Ephemeral (Hidden) Upon Each Boot WITHOUT Process Monitor**:
+7. Optional: **Start Ephemeral (Hidden) Upon Each Boot WITHOUT Process Monitor**:
     - Save the below PowerShell script as a `.ps1` file in your `Startup Folder`. You can easily access your `Startup Folder` by holding `CTRL+R` and typing `shell:startup`.
 
 ```powershell
