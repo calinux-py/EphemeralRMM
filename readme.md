@@ -62,7 +62,8 @@ It is a fun project.
     - `[AgentStatus]` is the Discord webhook where agents will post device information when inquired.
     - LiveFeed and AgentStatus can be the same Discord webhook.
     - `[AgentCommands]` is the Discord webhook used by agents to return output from PowerShell commands.
-    - LiveFeed and AgentStatus can be the same Discord webhook.
+    - `[ProcessFeed]` is the Discord webhook used to update new running processes.
+    - LiveFeed, AgentStatus, and ProcessFeed can be the same Discord webhook (but not recommended).
     - `[DiscordToken]` is where you enter your Discord Bot token. 
 
 4. **Convert Ephemeral source code into an .exe**:
