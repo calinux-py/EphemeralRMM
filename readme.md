@@ -97,6 +97,7 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
 - `/run`: Execute PowerShell or cmd commands directly from Discord.
 - `/howto-enroll`: Provides detailed instructions on how to enroll a new device.
 
+[<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/ephproc.png?raw=true" alt="Ephemeral Logo" width="5%">](https://github.com/calinux-py/Ephemeral)
 
 ## License
 
