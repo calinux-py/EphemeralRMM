@@ -105,4 +105,4 @@ MIT
 
 [<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/ephemerallogo.png?raw=true" alt="Ephemeral Logo" width="20%">](https://github.com/calinux-py/Ephemeral)
 
-[<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/1723167525111.gif?raw=true" alt="Ephemeral Logo" width="5%">](https://github.com/calinux-py/Ephemeral)
+[<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/1723167525111.gif?raw=true" alt="Ephemeral Logo" width="55%">](https://github.com/calinux-py/Ephemeral)
