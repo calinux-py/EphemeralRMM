@@ -60,7 +60,6 @@ It is a fun project.
     - Update `config/config.ini` with your Discord bot token and webhooks.
     - `[LiveFeed]` is the Discord webhook where your devices will actively post device information in realtime.
     - `[AgentStatus]` is the Discord webhook where agents will post device information when inquired.
-    - LiveFeed and AgentStatus can be the same Discord webhook.
     - `[AgentCommands]` is the Discord webhook used by agents to return output from PowerShell commands.
     - `[ProcessFeed]` is the Discord webhook used to update new running processes.
     - LiveFeed, AgentStatus, and ProcessFeed can be the same Discord webhook (but not recommended).
