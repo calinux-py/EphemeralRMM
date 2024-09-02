@@ -12,7 +12,7 @@ It is a fun project.
 | ✅     | **Status check on enrolled devices**        |
 | ✅     | **Real-time device feed**       |
 | ✅     | **Execute terminal cmds from Discord**   |
-| ✅     | **Monitor processes from Discord**   |
+| ✅     | **Real-time process monitor**   |
 
 
 
