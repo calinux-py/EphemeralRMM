@@ -80,7 +80,7 @@ cd "PATH\TO\Ephemeral\";
 Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden; Start-Process -FilePath .\agent3.ps1 -WindowStyle hidden
 ```
 
-Optional: **Start Ephemeral (Hidden) Upon Each Boot WITHOUT Process Monitor**:
+8. Optional: **Start Ephemeral (Hidden) Upon Each Boot WITHOUT Process Monitor**:
     - Save the below PowerShell script as a `.ps1` file in your `Startup Folder`. You can easily access your `Startup Folder` by holding `CTRL+R` and typing `shell:startup`.
 
 ```powershell
