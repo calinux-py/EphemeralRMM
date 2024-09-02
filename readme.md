@@ -64,14 +64,27 @@ It is a fun project.
     - LiveFeed and AgentStatus can be the same Discord webhook.
     - `[DiscordToken]` is where you enter your Discord Bot token. 
 
-4. **Run on your main device**:
-    ```powershell
-    python ephemeral-head.py
-    ```
-5. **Run on devices to manage**:
-    ```powershell
-    python ephemeral-agent.py
-    ```
+4. **Convert Ephemeral source code into an .exe**:
+```powershell
+pyinstaller --onefile PATH/TO/EPHEMERAL.py
+```
+
+5. **Run Ephemeral**:
+- Run Ephemeral-Head on a server or computer you are controlling.
+- Run Ephemeral-Client on a Windows client device you want to control.
+
+7. **Start Ephemeral (Hidden) Upon Each Boot**:
+Save the below PowerShell script as a `.ps1` file in your `Startup Folder`. You can easily access your `Startup Folder` by holding `CTRL+R` and typing `shell:startup`.
+```powershell
+cd "PATH\TO\Ephemeral\";
+Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden; Start-Process -FilePath .\agent3.ps1 -WindowStyle hidden
+```
+
+Optional: **Start Ephemeral (Hidden) Upon Each Boot WITHOUT Process Monitor**:
+```powershell
+cd "PATH\TO\Ephemeral\";
+Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
+```
 
 ## Commands
 
@@ -81,12 +94,6 @@ It is a fun project.
 - `/run`: Execute PowerShell or cmd commands directly from Discord.
 - `/howto-enroll`: Provides detailed instructions on how to enroll a new device.
 
-## Start Ephemeral (Hidden) Upon Each Boot
-Save the below PowerShell script as a `.ps1` file in your `Startup Folder`. You can easily access your `Startup Folder` by holding `CTRL+R` and typing `shell:startup`.
-```powershell
-cd "PATH\TO\Ephemeral\Ephemeral\";
-Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
-```
 
 ## License
 
