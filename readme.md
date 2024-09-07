@@ -39,7 +39,7 @@ It is a fun project.
 - **Discord Shell**: Execute Terminal (CMD) commands directly from Discord using the `/run` command. Return the output back to you in Discord.
 - **Guided Enrollment**: Step-by-step instructions for enrolling a new device via the `/howto-enroll` command.
 
-[<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/eph.png?raw=true" alt="Ephemeral Logo" width="41%">](https://github.com/calinux-py/Ephemeral)
+[<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/eph.png?raw=true" alt="Ephemeral Logo" width="71%">](https://github.com/calinux-py/Ephemeral)
 
 
 
@@ -97,7 +97,7 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
 - `/run`: Execute PowerShell or cmd commands directly from Discord.
 - `/howto-enroll`: Provides detailed instructions on how to enroll a new device.
 
-[<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/ephproc.png?raw=true" alt="Ephemeral Logo" width="39%">](https://github.com/calinux-py/Ephemeral)
+[<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/ephproc.png?raw=true" alt="Ephemeral Logo" width="70%">](https://github.com/calinux-py/Ephemeral)
 
 ## PowerShell Agents
 - **Agent.ps1**: used for checking statuses of all client agents. Returns output back to user in Discord.
