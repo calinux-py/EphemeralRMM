@@ -96,6 +96,9 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden; Start-Process -File
 cd "PATH\TO\Ephemeral\";
 Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
 ```
+
+---
+
 ## Linux Setup (Head Only)
 1. **Clone the Repository**:
     ```bash
