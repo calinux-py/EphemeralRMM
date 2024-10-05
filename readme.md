@@ -13,8 +13,8 @@ It is a fun project. Now control from Linux/Raspberry Pi!
 | ✅     | **Real-time device feed**       |
 | ✅     | **Execute terminal cmds from Discord**   |
 | ✅     | **Real-time process monitoring**   |
-| ✅     | **Linux Command and Control Support**   |
-| ✅     | **Windows Client and C&C Support**   |
+| ✅     | **Linux command and control support**   |
+| ✅     | **Windows client and C&C support**   |
 
 
 
