@@ -42,6 +42,7 @@ It is a fun project. Now control from Linux/Raspberry Pi!
 - **Device Listing**: View all enrolled devices and their details using the `/device-list` command.
 - **Status Check**: Remotely check the status of any enrolled device with the `/check-status` command.
 - **Discord Shell**: Execute Terminal (CMD) commands directly from Discord using the `/run` command. Return the output back to you in Discord.
+- **Process Monitor**: Monitor processes in real-time with the `Process Feed`.
 - **Guided Enrollment**: Step-by-step instructions for enrolling a new device via the `/howto-enroll` command.
 
 [<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/eph.png?raw=true" alt="Ephemeral Logo" width="71%">](https://github.com/calinux-py/Ephemeral)
