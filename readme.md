@@ -136,7 +136,7 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
     - Add this bash file, `start-eph.sh`, to any directory
    ```bash
     sleep 10
-    cd /home/jwb/Desktop/Ephemeral
+    cd /home/PATH/TO/Ephemeral
     lxterminal -e "python3 /home/PATH/TO/Ephemeral/Linux-Ephemeral-Head.py"
     ```
 
