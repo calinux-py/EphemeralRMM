@@ -1,7 +1,7 @@
 # [<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/ephemerallogo.png?raw=true" alt="Ephemeral Logo" width="5%">](https://github.com/calinux-py/Ephemeral)     EphemeralRMM
 
 Ephemeral is a free RMM using Discord and Chrome Remote Desktop API. It allows you to receive updates and control your devices from anywhere in the world using Discord.
-It is a fun project.
+It is a fun project. Now control from Linux/Raspberry Pi!
 
 | Supported | Features            |
 |--------|--------------------|
@@ -13,6 +13,8 @@ It is a fun project.
 | ✅     | **Real-time device feed**       |
 | ✅     | **Execute terminal cmds from Discord**   |
 | ✅     | **Real-time process monitoring**   |
+| ✅     | **Linux Command and Control Support**   |
+| ✅     | **Windows Client and C&C Support**   |
 
 
 
