@@ -115,12 +115,9 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
     
 4. **Configure Ephemeral**:
     - Update `config/config.ini` with your Discord bot token and webhooks.
-    - `[LiveFeed]` is the Discord webhook where your devices will actively post device information in realtime.
     - `[AgentStatus]` is the Discord webhook where agents will post device information when inquired.
-    - `[AgentCommands]` is the Discord webhook used by agents to return output from PowerShell commands.
-    - `[ProcessFeed]` is the Discord webhook used to update new running processes.
-    - LiveFeed, AgentStatus, and ProcessFeed can be the same Discord webhook (but not recommended).
-    - `[DiscordToken]` is where you enter your Discord Bot token. 
+    - `[DiscordToken]` is where you enter your Discord Bot token.
+    - No other webhooks are needed with Linux Ephemeral-Head.
 
 5. **Add perms as needed**:
    ```bash
