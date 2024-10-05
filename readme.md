@@ -32,6 +32,7 @@ It is a fun project. Now control from Linux/Raspberry Pi!
 - psutil
 - requests
 
+---
 
 ## Features
 
@@ -43,6 +44,8 @@ It is a fun project. Now control from Linux/Raspberry Pi!
 
 [<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/eph.png?raw=true" alt="Ephemeral Logo" width="71%">](https://github.com/calinux-py/Ephemeral)
 
+---
+
 ## Commands
 
 - `/device-list`: Lists all devices currently enrolled in the system.
@@ -50,6 +53,8 @@ It is a fun project. Now control from Linux/Raspberry Pi!
 - `/check-status`: Checks the status of devices.
 - `/run`: Execute PowerShell or cmd commands directly from Discord.
 - `/howto-enroll`: Provides detailed instructions on how to enroll a new device.
+
+---
 
 ## Windows Setup (Head and Client)
 
@@ -150,7 +155,7 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
    Exec=bash /home/PATH/TO/start-eph.sh
     ```
    
-
+---
 
 [<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/ephproc.png?raw=true" alt="Ephemeral Logo" width="70%">](https://github.com/calinux-py/Ephemeral)
 
@@ -159,6 +164,8 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
 - **Agent2.ps1**: used for running shell commands and returning output back to the user in Discord.
 - **Agent3.ps1**: used for monitoring new processes and updating the user in Discord.
 - **Agent.sh**: Linux version of Agent.ps1.
+
+---
 
 ## License
 
