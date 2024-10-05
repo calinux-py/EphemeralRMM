@@ -137,7 +137,8 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
 ## PowerShell Agents
 - **Agent.ps1**: used for checking statuses of all client agents. Returns output back to user in Discord.
 - **Agent2.ps1**: used for running shell commands and returning output back to the user in Discord.
-- **Agent3.ps1**: used for monitoring new processes and updating the user in Discord. 
+- **Agent3.ps1**: used for monitoring new processes and updating the user in Discord.
+- **Agent.sh**: Linux version of Agent.ps1.
 
 ## License
 
