@@ -133,17 +133,17 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
    ```
 
 7. **Run upon boot**:
-   a) Add this bash file, `start-eph.sh`, to any directory
+    - Add this bash file, `start-eph.sh`, to any directory
    ```bash
     sleep 10
     cd /home/jwb/Desktop/Ephemeral
     lxterminal -e "python3 /home/PATH/TO/Ephemeral/Linux-Ephemeral-Head.py"
     ```
 
-8. **Add startup file to .config**:
-   a) Go to /home/USER/.config
-   b) If you do not have a directory named autostart, create it.
-   c) Add this to autostart named Ephemeral.desktop
+9. **Add startup file to .config**:
+    - Go to /home/USER/.config
+    - If you do not have a directory named autostart, create it.
+    - Add this to autostart named Ephemeral.desktop
    ```bash
    [Desktop Entry]
 
