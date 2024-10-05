@@ -92,6 +92,7 @@ async def listofmemes(interaction: discord.Interaction):
 async def checkmemes(interaction: discord.Interaction, hostname: str, link: str, passcode: str = ''):
     await interaction.response.defer(ephemeral=False)
 
+    # dont really need this check right now but have future logic which this check will be required
     config = configparser.ConfigParser()
     configa = configparser.ConfigParser()
     config.read('config/config.ini')
