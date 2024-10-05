@@ -43,9 +43,15 @@ It is a fun project. Now control from Linux/Raspberry Pi!
 
 [<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/eph.png?raw=true" alt="Ephemeral Logo" width="71%">](https://github.com/calinux-py/Ephemeral)
 
+## Commands
 
+- `/device-list`: Lists all devices currently enrolled in the system.
+- `/enroll-device`: Enrolls a new device into the system.
+- `/check-status`: Checks the status of devices.
+- `/run`: Execute PowerShell or cmd commands directly from Discord.
+- `/howto-enroll`: Provides detailed instructions on how to enroll a new device.
 
-## Setup
+## Windows Setup
 
 1. **Clone the Repository**:
     ```bash
@@ -90,14 +96,36 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden; Start-Process -File
 cd "PATH\TO\Ephemeral\";
 Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
 ```
+## Linux Setup
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/calinux-py/Ephemeral.git
+    cd Ephemeral; cd Ephemeral
+    ```
 
-## Commands
+2. **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+    
+3. **Remove all carriage return (\r) characters from the Linux-agent.sh file, converting it from Windows-style line to Unix-style line endings (im lazy do it yourself).
+    ```bash
+    sed -i 's/\r//' Linux-agent.sh
+    ```
+    
+4. **Configure Ephemeral**:
+    - Update `config/config.ini` with your Discord bot token and webhooks.
+    - `[LiveFeed]` is the Discord webhook where your devices will actively post device information in realtime.
+    - `[AgentStatus]` is the Discord webhook where agents will post device information when inquired.
+    - `[AgentCommands]` is the Discord webhook used by agents to return output from PowerShell commands.
+    - `[ProcessFeed]` is the Discord webhook used to update new running processes.
+    - LiveFeed, AgentStatus, and ProcessFeed can be the same Discord webhook (but not recommended).
+    - `[DiscordToken]` is where you enter your Discord Bot token. 
 
-- `/device-list`: Lists all devices currently enrolled in the system.
-- `/enroll-device`: Enrolls a new device into the system.
-- `/check-status`: Checks the status of devices.
-- `/run`: Execute PowerShell or cmd commands directly from Discord.
-- `/howto-enroll`: Provides detailed instructions on how to enroll a new device.
+5. **Run Ephemeral**:
+   ```bash
+   python3 Linux-Ephemeral-Head.py
+   ```
 
 [<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/ephproc.png?raw=true" alt="Ephemeral Logo" width="70%">](https://github.com/calinux-py/Ephemeral)
 
