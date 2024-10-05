@@ -71,6 +71,7 @@ It is a fun project. Now control from Linux/Raspberry Pi!
 
 3. **Configure Ephemeral**:
     - Update `config/config.ini` with your Discord bot token and webhooks.
+    - `[Hostname]` is the hostname of the device running Ephemeral-Head (the command and control device).
     - `[LiveFeed]` is the Discord webhook where your devices will actively post device information in realtime.
     - `[AgentStatus]` is the Discord webhook where agents will post device information when inquired.
     - `[AgentCommands]` is the Discord webhook used by agents to return output from PowerShell commands.
@@ -123,6 +124,7 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
     
 4. **Configure Ephemeral**:
     - Update `config/config.ini` with your Discord bot token and webhooks.
+    - `[Hostname]` is the hostname of the device running Ephemeral-Head (the command and control device).
     - `[AgentStatus]` is the Discord webhook where agents will post device information when inquired.
     - `[DiscordToken]` is where you enter your Discord Bot token.
     - No other webhooks are needed with Linux Ephemeral-Head.
