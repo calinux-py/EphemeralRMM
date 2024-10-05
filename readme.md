@@ -132,6 +132,26 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
    python3 Linux-Ephemeral-Head.py
    ```
 
+7. **Run upon boot**:
+   a) Add this bash file, `start-eph.sh`, to any directory
+   ```bash
+    sleep 10
+    cd /home/jwb/Desktop/Ephemeral
+    lxterminal -e "python3 /home/PATH/TO/Ephemeral/Linux-Ephemeral-Head.py"
+    ```
+
+8. **Add startup file to .config**:
+   a) Go to /home/USER/.config
+   b) If you do not have a directory named autostart, create it.
+   c) Add this to autostart named Ephemeral.desktop
+   ```bash
+   [Desktop Entry]
+
+   Exec=bash /home/PATH/TO/start-eph.sh
+    ```
+   
+
+
 [<img src="https://github.com/calinux-py/Ephemeral/blob/main/Ephemeral/config/ephproc.png?raw=true" alt="Ephemeral Logo" width="70%">](https://github.com/calinux-py/Ephemeral)
 
 ## PowerShell Agents
