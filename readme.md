@@ -27,7 +27,7 @@ It is a fun project. Now control from Linux/Raspberry Pi!
 - Discord Bot Token
 - Discord Webhooks
 - Google Remote Desktop
-- PowerShell
+- PowerShell or Bash
 - discord.py
 - psutil
 - requests
