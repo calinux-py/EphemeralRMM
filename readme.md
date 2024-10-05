@@ -122,7 +122,12 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
     - LiveFeed, AgentStatus, and ProcessFeed can be the same Discord webhook (but not recommended).
     - `[DiscordToken]` is where you enter your Discord Bot token. 
 
-5. **Run Ephemeral**:
+5. **Add perms add needed**:
+   ```bash
+   chmod +x Linux-agent.sh Linux-Ephemeral-Head.py
+   ```
+
+6. **Run Ephemeral**:
    ```bash
    python3 Linux-Ephemeral-Head.py
    ```
