@@ -51,7 +51,7 @@ It is a fun project. Now control from Linux/Raspberry Pi!
 - `/run`: Execute PowerShell or cmd commands directly from Discord.
 - `/howto-enroll`: Provides detailed instructions on how to enroll a new device.
 
-## Windows Setup
+## Windows Setup (Head and Client)
 
 1. **Clone the Repository**:
     ```bash
@@ -96,7 +96,7 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden; Start-Process -File
 cd "PATH\TO\Ephemeral\";
 Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
 ```
-## Linux Setup
+## Linux Setup (Head Only)
 1. **Clone the Repository**:
     ```bash
     git clone https://github.com/calinux-py/Ephemeral.git
