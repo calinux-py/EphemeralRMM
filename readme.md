@@ -108,7 +108,7 @@ Start-Process -FilePath .\ephemeral.exe -WindowStyle hidden
     pip install -r requirements.txt
     ```
     
-3. **Remove all carriage return (\r) characters from the Linux-agent.sh file, converting it from Windows-style line to Unix-style line endings (im lazy do it yourself).
+3. **Remove all carriage return (\r) characters from the Linux-agent.sh file, converting it from Windows-style line to Unix-style line endings** (im lazy do it yourself).
     ```bash
     sed -i 's/\r//' Linux-agent.sh
     ```
