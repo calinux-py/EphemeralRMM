@@ -19,7 +19,7 @@ It is a fun project. Now control from Linux/Raspberry Pi!
 
 
 ## Requirements
-![Windows](https://img.shields.io/badge/platform-Windows-blue) ![Raspbian](https://img.shields.io/badge/platform-Raspbian-green) ![Python](https://img.shields.io/badge/language-Python-darkgreen) ![PowerShell](https://img.shields.io/badge/language-PowerShell-purple) ![Bash](https://img.shields.io/badge/language-Bash-yellow) ![Discord](https://img.shields.io/badge/Discord-7289DA?logo=discord&logoColor=white) ![Google](https://img.shields.io/badge/Google-4285F4?logo=google&logoColor=white)
+![Windows](https://img.shields.io/badge/platform-Windows-blue) ![Linux](https://img.shields.io/badge/platform-Raspbian-green) ![Python](https://img.shields.io/badge/language-Python-darkgreen) ![PowerShell](https://img.shields.io/badge/language-PowerShell-purple) ![Bash](https://img.shields.io/badge/language-Bash-yellow) ![Discord](https://img.shields.io/badge/Discord-7289DA?logo=discord&logoColor=white) ![Google](https://img.shields.io/badge/Google-4285F4?logo=google&logoColor=white)
 
 
 
