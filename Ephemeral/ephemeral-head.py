@@ -16,7 +16,6 @@ import os
 import configparser
 import requests
 
-# call stuff
 hostname = socket.gethostname()
 current_user = os.getlogin()
 uptime_seconds = int(datetime.now().timestamp() - psutil.boot_time())
@@ -80,9 +79,9 @@ async def listofmemes(interaction: discord.Interaction):
         link = parts[1]
         passcode = parts[2] if len(parts) > 2 else ''
 
-        response += f"> **Name**: {name}\n"
+        response += f"> **Name**: {name}\n> [Remote to {name}]({link})\n"
         if passcode:
-            response += f"> **Passcode**: ||{passcode}||\n> [Remote to {name}]({link})\n"
+            response += f"> **Passcode**: ||{passcode}||\n"
         response += "\n"
 
     await interaction.followup.send(response)
@@ -91,30 +90,33 @@ async def listofmemes(interaction: discord.Interaction):
 @bot.tree.command(name="enroll-device", description="Setup a new device.")
 async def checkmemes(interaction: discord.Interaction, hostname: str, link: str, passcode: str = ''):
     await interaction.response.defer(ephemeral=False)
-    uname = platform.uname()
 
-    if uname.node.lower() != 'calinux':
+    config = configparser.ConfigParser()
+    configa = configparser.ConfigParser()
+    config.read('config/config.ini')
+
+    hostname2 = config.get('Hostname', 'name').lower()
+    if socket.gethostname().lower() != hostname2:
         return
+    configa.read('config/agents.ini')
 
-    config.read('config/agents.ini')
+    if 'Ephemerial' not in configa:
+        configa['Ephemerial'] = {}
+    if 'Agents' not in configa['Ephemerial']:
+        configa['Ephemerial']['Agents'] = ''
 
-    if 'Ephemerial' not in config:
-        config['Ephemerial'] = {}
-    if 'Agents' not in config['Ephemerial']:
-        config['Ephemerial']['Agents'] = ''
-
-    agents = config['Ephemerial']['Agents']
+    agents = configa['Ephemerial']['Agents']
     new_agent = f'[{hostname} : {link} : {passcode}]' if passcode else f'[{hostname} : {link}]'
 
     if agents:
         agents_list = agents.split(', ')
         agents_list.append(new_agent)
-        config['Ephemerial']['Agents'] = ', '.join(agents_list)
+        configa['Ephemerial']['Agents'] = ', '.join(agents_list)
     else:
-        config['Ephemerial']['Agents'] = new_agent
+        configa['Ephemerial']['Agents'] = new_agent
 
     with open('config/agents.ini', 'w') as configfile:
-        config.write(configfile)
+        configa.write(configfile)
 
     await interaction.followup.send(f"Added agent: {hostname} with link: {link} {'and passcode: ' + passcode if passcode else ''}")
 
@@ -128,7 +130,7 @@ async def memecheck(interaction: discord.Interaction):
         response_message = f"```fix\n[ + ] Agent Responded from {hostname}```"
         asyncio.run_coroutine_threadsafe(interaction.channel.send(response_message), bot.loop)
         subprocess.Popen(
-            ["powershell.exe", "-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "agent.ps1"]
+            ["bash", "./Linux-agent.sh"]
         )
 
     thread = threading.Thread(target=run_in_thread)
