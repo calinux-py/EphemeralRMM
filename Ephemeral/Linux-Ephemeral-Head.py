@@ -15,6 +15,21 @@ from datetime import datetime
 import os
 import configparser
 import requests
+import ipaddress
+
+def get_non_loopback_ipv4_addresses():
+    valid_ips = []
+    for interface, addrs in psutil.net_if_addrs().items():
+        for addr in addrs:
+            if addr.family == socket.AF_INET:
+                ip = addr.address
+                try:
+                    ip_obj = ipaddress.ip_address(ip)
+                    if not ip_obj.is_loopback:
+                        valid_ips.append(ip)
+                except ValueError:
+                    continue
+    return valid_ips
 
 # call stuff
 hostname = socket.gethostname()
@@ -36,10 +51,14 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 print(f'\n\n---------------------------------------------\nEphemeral Head is initiating...')
 print(f"{timestamp_utc}\n---------------------------------------------\n\n")
+
 @bot.event
 async def on_ready():
     await bot.tree.sync(guild=None)
-
+    
+    ipv4_addresses = get_non_loopback_ipv4_addresses()
+    ipv4_str = "\n".join(ipv4_addresses) if ipv4_addresses else "None"
+    
     senddis = {
         "embeds": [
             {
@@ -48,7 +67,8 @@ async def on_ready():
                     {"name": "Hostname", "value": hostname},
                     {"name": "Current User", "value": current_user},
                     {"name": "Uptime", "value": readable_uptime},
-                    {"name": "Timestamp UTC", "value": timestamp_utc}
+                    {"name": "Timestamp UTC", "value": timestamp_utc},
+                    {"name": "IPv4 Addresses", "value": ipv4_str}
                 ],
                 "color": 00000000
             }
@@ -141,14 +161,13 @@ async def memecheck(interaction: discord.Interaction):
     await interaction.followup.send("-# Command executed successfully.", ephemeral=True)
 
 
-
 @bot.tree.command(name="howto-enroll", description="How to enroll a new device.")
 async def howtomeme(interaction: discord.Interaction):
     await interaction.response.defer(ephemeral=False)
 
     embed = discord.Embed(
         title="How to Enroll a New Device",
-        description=(
+        description=( 
             "Step 1\n\nFirst, download [Google Remote Desktop](https://remotedesktop.google.com/unsupported-browser/?target=/access) "
             "and follow the directions to fully install it. Recommended to use Google Chrome or bugs may occur.\n\n"
             "Once installed, select `Set up via SSH` and then `Begin`."
@@ -159,7 +178,7 @@ async def howtomeme(interaction: discord.Interaction):
     await interaction.followup.send(embed=embed, file=discord.File("config/setup/new-agent1.png"))
 
     embed = discord.Embed(
-        description=(
+        description=( 
             "Step 2\n\nCopy the `.msi` or `.deb` link and send this to the remote computer you want to onboard. "
             "Download the remote software and complete the installation."
         )
@@ -169,7 +188,7 @@ async def howtomeme(interaction: discord.Interaction):
     await interaction.followup.send(embed=embed, file=discord.File("config/setup/new-agent2.png"))
 
     embed = discord.Embed(
-        description=(
+        description=( 
             "Step 3\n\nAuthorize the setup of another computer and copy the script for either `Cmd`, `PowerShell`, or `Linux Terminal`. "
             "Run this in the respective terminal."
         )
@@ -179,7 +198,7 @@ async def howtomeme(interaction: discord.Interaction):
     await interaction.followup.send(embed=embed, file=discord.File("config/setup/new-agent3.png"))
 
     embed = discord.Embed(
-        description=(
+        description=( 
             "Step 4\n\nOnce you execute the script in the terminal, it will require a `passcode` to complete. "
             "This `passcode` will be required when remoting to that specific device.\n\n"
         )
@@ -189,7 +208,7 @@ async def howtomeme(interaction: discord.Interaction):
     await interaction.followup.send(embed=embed, file=discord.File("config/setup/new-agent4.png"))
 
     embed = discord.Embed(
-        description=(
+        description=( 
             "Step 5\n\nReturn back to the `Google Remote Desktop` application and view your new enrolled device in `Remote Access`.\n\nIf your device does not appear, refresh the page."
         )
     )
@@ -198,7 +217,7 @@ async def howtomeme(interaction: discord.Interaction):
     await interaction.followup.send(embed=embed, file=discord.File("config/setup/new-agent5.png"))
 
     embed = discord.Embed(
-        description=(
+        description=( 
             "Step 6\n\nRight-click the recently enrolled device and select `Copy link address`."
         )
     )
@@ -207,7 +226,7 @@ async def howtomeme(interaction: discord.Interaction):
     await interaction.followup.send(embed=embed, file=discord.File("config/setup/new-agent6.png"))
 
     embed = discord.Embed(
-        description=(
+        description=( 
             "Step 7\n\nSwitch back to Discord and run the `/enroll-device` command.\n\nEnter in the devices `name`, the `link` copied from the last step, and the `passcode` (optional)."
         )
     )
@@ -216,14 +235,13 @@ async def howtomeme(interaction: discord.Interaction):
     await interaction.followup.send(embed=embed, file=discord.File("config/setup/new-agent7.png"))
 
     embed = discord.Embed(
-        description=(
+        description=( 
             "Step 8\n\nRun the `/device-list` command to view enrolled devices."
         )
     )
     embed.set_image(url="attachment://new-agent8.png")
 
     await interaction.followup.send(embed=embed, file=discord.File("config/setup/new-agent8.png"))
-
 
 
 @bot.tree.command(name="run", description="Execute PowerShell command")
